@@ -43,7 +43,6 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2.5px dashed tomato;
 }
 
 .header .head{
@@ -57,18 +56,32 @@ main{
     width: 100%;
     overflow: hidden;
     background: rgb(245, 245, 245, .3);
+    transition:  height 1s linear;
 }
 
-
+.head-opener i{
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid burlywood;
+}
 
 .eachdrop.active > .drop-body{
-    height: auto;
+    max-height: 600px;
     padding: 15px 20px;
+    transition:  max-height 2s linear;
 }
 
 .eachdrop.not-active > .drop-body{
-    height: 0px;
+    max-height: 0px;
     padding: 0;
+    transition:  max-height 1s linear, padding 1s linear 0s;
 }
 
 
