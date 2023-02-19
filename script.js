@@ -41,16 +41,19 @@ function init(parentDiv){
     if((parentDiv.classList.contains("not-active"))){
         parentDiv.classList.remove("not-active");
         parentDiv.classList.add("active");
-        parentDiv.childNodes[1].childNodes[3].innerHTML = `<i class="fa fa-chevron-up" aria-hidden="true"></i>`
+        parentDiv.childNodes[1].childNodes[3].style.transform = `rotate(180deg)`
+        parentDiv.childNodes[1].childNodes[3].style.transition = `transform 0.5s linear`
     }else if(parentDiv.classList.contains("active")){
         parentDiv.classList.add("not-active")
         parentDiv.classList.remove("active");
-        parentDiv.childNodes[1].childNodes[3].innerHTML = `<i class="fa fa-chevron-down" aria-hidden="true"></i>`
+        parentDiv.childNodes[1].childNodes[3].style.transform = `rotate(0deg)`
+        parentDiv.childNodes[1].childNodes[3].style.transition = `transform 0.5s linear`
     }
 }
 
 function closeHead(){
     openHeader.forEach( (opener) => {
-        opener.innerHTML = `<i class="fa fa-chevron-down" aria-hidden="true"></i>`
+        opener.style.transform = `rotate(0deg)`;
+        opener.style.transition = `transform 0.5s linear`
     })
 }
